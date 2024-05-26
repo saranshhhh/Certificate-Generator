@@ -9,7 +9,7 @@
   font-family: " Arno Pro Display ", "Times New Roman", Times, serif;
   /* src: url("../font/ArnoPro-BoldDisplay.otf"); */
   font-weight: bold;
-  font-size: 80px;
+  font-size: 60px;
   margin-top: 12px;
   color: rgb(28, 28, 28);
 }
@@ -92,7 +92,7 @@
 }
 
 .user {
-  margin-top: 170px;
+  margin-top: 140px;
 }
 
 .user > h4 {

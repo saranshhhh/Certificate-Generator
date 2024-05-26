@@ -12,19 +12,19 @@ let container = document.querySelector(".container");
 let certificate_no = "UC-3308c41b-93cb-485a-9ee3-450729f8ef73";
 
 // Random Number Generation for Certificate Number & Reference Number
-a = 400000; //Min value
-b = 485000; //Max Value
-let rand = a + (b - 1) * Math.random(); //Main Formula
+let a = 400000; // Min value
+let b = 485000; // Max value
+let rand = a + (b - 1) * Math.random(); // Main formula
 let rand2 = Math.round(rand);
 
-c = 30; //Min value
-d = 90; //Max Value
-let rand3 = c + (d - 1) * Math.random(); //Main Formula
+let c = 30; // Min value
+let d = 90; // Max value
+let rand3 = c + (d - 1) * Math.random(); // Main formula
 let rand4 = Math.round(rand3);
 
-e = 1; //Min value
-f = 9; //Max Value
-let rand5 = e + (f - 1) * Math.random(); //Main Formula
+let e = 1; // Min value
+let f = 9; // Max value
+let rand5 = e + (f - 1) * Math.random(); // Main formula
 let rand6 = Math.round(rand5);
 
 // Main Code Starts Here
@@ -50,6 +50,8 @@ generate.addEventListener("click", (e) => {
   } else {
     if (instructor.includes(",")) {
       instruct = "Instructors";
+    } else {
+      instruct = "Instructor";
     }
     fname.value = "";
     lname.value = "";
@@ -70,26 +72,25 @@ generate.addEventListener("click", (e) => {
     <div class="right-side">
                       <div class="c-no">Certificate no: UC-3308c41b-93cb-485a-9ee3-${rand2}f8ef${rand4}</div>
                       <div class="c-url">Certificate url: ude.my/UC-3308c41b-93cb-485a-9ee3-${rand2}f8ef${rand4}</div>
-                      <div class="ref-no">Reference Number: 000${rand6}</div>
-                  </div>
-  </div>
+          <div class="ref-no">Reference Number: 000${rand6}</div>
+        </div>
+      </div>
   <div class="content">
     <h3>CERTIFICATE OF COMPLETION</h3>
     <h1 id="course-name">${course_name}</h1>
     <h4>${instruct}&nbsp;<b>${instructor}</b></h4>
-  </div>
+      </div>
   <div class="user">
     <h1 id="name">${first_name} ${last_name}</h1>
     <h4>Date &nbsp;<b>${Date}</b></h4>
     <h4>Length &nbsp;<b>${c_length} total hours</b></h4>
-  </div>
-  `;
+      </div>
+    `;
     document.getElementById("download").style.display = "block";
   }
 });
 
-//Download PDF
-
+// Download PDF
 let download = document.getElementById("download");
 download.addEventListener("click", () => {
   var opt = {
@@ -100,5 +101,5 @@ download.addEventListener("click", () => {
     jsPDF: { unit: "px", format: "c2", orientation: "landscape" },
   };
 
-  html2pdf().set(opt).from(certificate).save();
+  html2pdf().set(opt).from(document.getElementById("certificate")).save();
 });
